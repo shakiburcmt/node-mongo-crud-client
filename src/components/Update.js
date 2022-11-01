@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { useLoaderData, useNavigate } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 
 const Update = () => {
     const storedUser = useLoaderData();
     const [user, setUser] = useState({ storedUser });
-    const navigate = useNavigate();
     
     const handleUpdateUser = event => {
         event.preventDefault();
@@ -21,7 +20,6 @@ const Update = () => {
                 if (data.modifiedCount > 0) {
                     alert('User updated properly')
                     console.log(data)
-                    navigate('/')
                 }
             })
         
